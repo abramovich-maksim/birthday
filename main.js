@@ -1,7 +1,7 @@
 var current = -1;
 var questions = [
-    { "text": "Question 1", "img": "img\\quest1.jpg", "answer": "a1", "alternativeAnswer": "admin" },
-    { "text": "Question 2", "img": "img\\quest2.jpg", "answer": "a2", "alternativeAnswer": "12345" },
+    { "text": "Question 1", "img": "img\\quest1.jpg", "answer": "Кодзима - гений", "alternativeAnswer": "admin" },
+    { "text": "Question 2", "img": "img\\quest2.jpg", "answer": "Скриптонит", "alternativeAnswer": "12345" },
     { "text": "Question 3", "img": "img\\quest3.jpg", "answer": "a3", "alternativeAnswer": "password" },
     { "text": "Question 4", "img": "img\\quest4.jpg", "answer": "a4", "alternativeAnswer": "qwerty" },
 ]
@@ -10,7 +10,7 @@ function getTemplate(index) {
     return `<div class="container" id="question${index}">
         <div class="caption">
             <span class="border">${questions[index].text}</span>
-            <div><img src="${questions[index].img}" style="width: 200px; height: 100px;"></img></div>
+            <div><img src="${questions[index].img}"></img></div>
             <div><input type="text" id="answer${index}"></div>
             <div><button id="submit${index}">Submit</button></div>
             </div>
@@ -32,7 +32,9 @@ function nextQuestion() {
 
     $(`#submit${current}`).on("click", function(e) {
         var answer = $(`#answer${current}`).val();
-        if (answer == questions[current].answer) {
+		var expectedAnswer = questions[current].answer;
+		var expectedAnswer2 = questions[current].alternativeAnswer;
+        if (answer == expectedAnswer || answer == expectedAnswer2) {
             nextQuestion();
         } else {
             alert('Неверный ответ, попробуйте еще раз');
