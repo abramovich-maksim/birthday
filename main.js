@@ -7,13 +7,16 @@ var questions = [
 ]
 
 function getTemplate(index) {
-    return `<div class="container" id="question${index}">
-        <div class="question-caption">
-            <span class="border">${questions[index].text}</span>
+    return `
+	<div class="container" id="question${index}">
+        <div class="question-container">
+            <div class="caption">
+				<div class="border">${questions[index].text}</div>
+			</div>
             <div><img src="${questions[index].img}" style="width: 70%"></img></div>
             <div><input type="text" id="answer${index}"></div>
             <div><button id="submit${index}">Submit</button></div>
-            </div>
+		</div>
     </div>`;
 }
 

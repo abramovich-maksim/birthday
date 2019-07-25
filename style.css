@@ -38,7 +38,6 @@ body, html {
     background-position: center;
     min-height: 100%;
     background-image: url("img/back.jpg");
-    background-size: 250px 250px; 
   }
 
   .background {
@@ -55,21 +54,13 @@ body, html {
     color: #000;
   }
   
-  .question-caption {
+  .question-container {
 	position: absolute;
     left: 0;
     top: 30%;
     width: 100%;
     text-align: center;
-    color: #000;
-  }
-  
-  .question-caption span.border {
-    background-color: #111;
-    color: #fff;
-    padding: 18px;
-    font-size: 25px;
-    letter-spacing: 10px;
+	background-color: rgb(128, 128, 128, 0.5);
   }
   
   .caption span.border {
